@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>My Tableau Work</title>
+
 <style>
   :root {
     --bg: #ffffff;
@@ -159,6 +162,7 @@
     <h1>Six dashboards. Six real questions.</h1>
 
     <section class="grid">
+
       <article class="card">
         <div class="media contain">
           <img src="images/sakura_map.png" alt="Cherry Blossom map dashboard" />
@@ -193,8 +197,8 @@
       </article>
 
       <article class="card">
-        <div class="media contain">
-          <img src="images/Journey.png" alt="Journey through Armenian mountains dashboard" />
+        <div class="media">
+          <img src="images/journey_map.png" alt="Journey Through the Mountains dashboard" />
         </div>
         <div class="meta">
           <h2>Journey</h2>
@@ -209,7 +213,7 @@
         </div>
         <div class="meta">
           <h2>Manhattan Stays</h2>
-          <p class="question">Where in Manhattan should I stay?</p>
+          <p class="question">Which neighborhoods in Manhattan offer the best value to stay?</p>
           <p class="sub">Custom Mapbox layer pricing neighborhood ratings</p>
         </div>
       </article>
@@ -224,7 +228,13 @@
           <p class="sub">Listings price patterns neighborhood comparison</p>
         </div>
       </article>
+
     </section>
   </main>
 </body>
 </html>
+'''
+
+out = Path('/mnt/data/tableau_work_page_journey_replaced.html')
+out.write_text(html, encoding='utf-8')
+out
